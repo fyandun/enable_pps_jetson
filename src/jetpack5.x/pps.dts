@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    overlay-name = "Jetson PPS";
+    jetson-header-name = "Jetson 40pin Header";
+    compatible = "nvidia,p3509-0000+p3668-0000";
+
+    fragment {
+        target-path = "/";
+        __overlay__ {
+			pps: pps_gpio {
+				compatible = "pps-gpio";
+				gpios = <&tegra_main_gpio 133 1>;
+				assert-falling-edge;
+				status = "okay";
+			};
+        };
+    };
+};
