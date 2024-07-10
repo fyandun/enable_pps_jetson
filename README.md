@@ -101,7 +101,7 @@ make ARCH=arm64 O=$TEGRA_KERNEL_OUT -j8
 cd ${PATH_TO_SDK}/Linux_for_Tegra/kernel
 cp $TEGRA_KERNEL_OUT/arch/arm64/boot/Image Image
 cd dtb
-cp -a /$TEGRA_KERNEL_OUT/arch/arm64/boot/dts/nvidia .
+cp $TEGRA_KERNEL_OUT/arch/arm64/boot/dts/nvidia/* .
 cd ~/nvidia/nvidia_sdk/JetPack_4.3_Linux_P3448/Linux_for_Tegra
 ```
 15. Now we have everything ready to flash the kernel. We have two options here, using the command line or the SDK manager
