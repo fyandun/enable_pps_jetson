@@ -126,3 +126,10 @@ Put the board in recovery mode and don't download anything and just skip to the 
 - Reading the gpio_info: ```cat /sys/kernel/debug/gpio```
 
 
+## Avoiding Distro Upgrade
+To avoid messing up the custom configuration when upgrading packages, we need to hold the L4T packages from upgrading. For doing this run:
+```
+sudo apt-mark hold 'nvidia-l4t-*'
+```
+These instructions were borrowed from [here](https://www.forecr.io/blogs/bsp-development/how-to-apply-distro-upgrade-apt-upgrade-on-jetson-modules). Forecr have some other blog posts on customizing jetson boards.
+
